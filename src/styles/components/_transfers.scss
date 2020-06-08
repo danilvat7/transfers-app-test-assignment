@@ -1,0 +1,21 @@
+.transfers {
+  .card-header {
+    background-color: $cardHeaderBg;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    color: $white;
+    padding: 0 18px;
+    height: 60px;
+
+    .mat-icon {
+      color: $lightBlue;
+      margin-top: 2px;
+    }
+  }
+
+  .card-body {
+    background-color: $white;
+    padding: 0 23px 25px 17px;
+  }
+}

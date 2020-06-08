@@ -1,0 +1,98 @@
+:host ::ng-deep .transactions-filter {
+  display: flex;
+  align-items: center;
+  padding: 7px 0 10px;
+
+  &--seach,
+  &--sort {
+    width: 50%;
+  }
+
+  &--seach {
+    padding: 0 10px;
+  }
+
+  &--sort {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+
+    &>div {
+      font-size: 14px;
+      line-height: 16px;
+      margin-right: 14px;
+    }
+
+    .mat-button-toggle-appearance-standard {
+      .mat-button-toggle-label-content {
+        padding: 0 23px;
+        line-height: 34px;
+      }
+    }
+  }
+
+  .searh-field {
+    position: relative;
+
+    &--clear-icon {
+      position: absolute;
+      top: 0;
+      right: 0;
+      cursor: pointer;
+    }
+  }
+
+  .sort-btns {
+    &--btn {
+      position: relative;
+    }
+
+    &--icons {
+      position: absolute;
+      top: 5px;
+      right: 0;
+    }
+
+    .mat-button-toggle-checked {
+      background-color: #ffffff;
+    }
+  }
+
+  @media (max-width: 1200px) {
+    &--seach {
+      width: 35%;
+    }
+
+    &--sort {
+      width: 65%;
+    }
+  }
+
+  @media (max-width: 1024px) {
+    flex-wrap: wrap;
+
+    &--seach {
+      width: 100%;
+    }
+
+    &--sort {
+      width: 100%;
+      justify-content: flex-start;
+    }
+  }
+
+  @media (max-width: 767px) {
+    &--sort {
+      &>div {
+        display: none;
+      }
+
+      .mat-button-toggle-appearance-standard {
+        .mat-button-toggle-label-content {
+          padding: 0 11px;
+          line-height: 31px;
+        }
+      }
+    }
+  }
+}

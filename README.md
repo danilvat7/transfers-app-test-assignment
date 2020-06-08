@@ -1,6 +1,13 @@
 # TransfersApp
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 9.1.3.
+This project was created using Angular 9 and Material.
+
+The project has three main parts:
+Core - contains common components and services;
+Shared - define common components and other modules that we need to import inside every other module of our application;
+Features - should contain all features modules;
+
+In addition, all application components were covered by unit tests.
 
 ## Development server
 
@@ -18,10 +25,8 @@ Run `ng build` to build the project. The build artifacts will be stored in the `
 
 Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
 
-## Running end-to-end tests
+## Running builded version localy
 
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+    1. Install http-server for serving the app: npm i -g http-server
+    2. cd (change directory) into the the build location (/dist/transfers-app) and run the app with: http-server
+    3. Open http-server url appending /index.html to it, should look something like this http://127.0.0.1:8080/index.html

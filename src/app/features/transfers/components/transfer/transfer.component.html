@@ -1,0 +1,16 @@
+<div class="transfer">
+  <div class="transfer--header card-header">
+    <div>
+      <mat-icon>wifi_protected_setup</mat-icon>
+    </div>
+    <div>
+      <h2>Make a Transfer</h2>
+    </div>
+    <div></div>
+  </div>
+
+  <div class="transfer--form card-body">
+    <app-transfer-form #transferForm [accountBalance]="accountBalance" (formSubmit)="onFormSubmit($event)">
+    </app-transfer-form>
+  </div>
+</div>

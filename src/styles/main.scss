@@ -1,0 +1,36 @@
+@import "~perfect-scrollbar/css/perfect-scrollbar.css";
+
+// utilities
+@import './utilities/variables';
+
+// base
+@import './base/base';
+@import './base/typography';
+
+// Components
+@import './components/form';
+@import './components/transfers';
+
+
+
+.primary-theme {
+  height: calc(100vh - #{$headerHeight + 3});
+
+  &--container {
+    width: $containerWidth;
+    max-width: $containerMaxWidth;
+    margin: 0 auto;
+
+    @media (max-width: 991px) {
+      width: 100%;
+    }
+  }
+
+  @media (max-width: 767px) {
+    height: 100%;
+  }
+
+  &--header {
+    height: $headerHeight;
+  }
+}

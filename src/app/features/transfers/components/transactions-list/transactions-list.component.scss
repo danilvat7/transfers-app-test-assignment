@@ -1,0 +1,9 @@
+.transactions-list {
+
+  &--item {
+    &:last-child {
+      border-bottom: 2px solid #cccccc;
+      display: block;
+    }
+  }
+}

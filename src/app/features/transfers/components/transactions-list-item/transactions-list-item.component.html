@@ -1,0 +1,22 @@
+<div class="transaction">
+  <div class="transaction--info">
+    <div class="transaction--status" [ngStyle]="{backgroundColor: transaction.categoryCode}">
+    </div>
+    <div class="transaction--date">
+      {{transaction.transactionDate | date: 'MMM d' }}
+    </div>
+    <div class="transaction--merchant-logo">
+      <img *ngIf="transaction.merchantLogo; else placeholderLogo" [src]="transaction.merchantLogo" alt="merchant-logo">
+      <ng-template #placeholderLogo>
+        <img src="./../../../../../assets/images/logo-placeholder.png" alt="logo-placeholder">
+      </ng-template>
+    </div>
+    <div class="transaction--merchant">
+      <div class="transaction--merchant-name">{{transaction.merchant}}</div>
+      <div>{{transaction.transactionType}}</div>
+    </div>
+  </div>
+  <div class="transaction--amount">
+    -{{ transaction.amount | currency}}
+  </div>
+</div>

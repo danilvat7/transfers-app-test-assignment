@@ -1,0 +1,23 @@
+.transactions {
+
+  &--list {
+    position: relative;
+    max-height: 60vh;
+    min-height: 60vh;
+  }
+
+  @media (max-width: 1024px) {
+    &--list {
+      max-height: 49vh;
+      min-height: 49vh;
+    }
+  }
+
+  @media (max-width: 767px) {
+    &--list {
+      max-height: initial;
+      min-height: initial;
+      overflow: visible !important;
+    }
+  }
+}

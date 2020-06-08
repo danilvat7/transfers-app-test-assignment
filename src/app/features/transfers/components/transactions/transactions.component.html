@@ -1,0 +1,20 @@
+<div class="transactions">
+  <div class="transactions--header card-header">
+    <div>
+      <mat-icon>work</mat-icon>
+    </div>
+    <div>
+      <h2>Recent Transactions</h2>
+    </div>
+    <div></div>
+  </div>
+  <div class="transactions--body card-body">
+    <div class="transactions--filter">
+      <app-transactions-filter (filterChange)="onFilterChange($event)"></app-transactions-filter>
+    </div>
+    <div class="transactions--list" [perfectScrollbar]>
+      <app-transactions-list></app-transactions-list>
+    </div>
+  </div>
+
+</div>

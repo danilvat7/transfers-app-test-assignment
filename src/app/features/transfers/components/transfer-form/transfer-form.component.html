@@ -1,0 +1,37 @@
+<form [formGroup]="form" #formRef="ngForm" class="form" (ngSubmit)="onSubmit()" novalidate>
+
+  <div class="form--group">
+    <div class="form--label">FROM ACCOUNT</div>
+    <mat-form-field floatLabel="never">
+      <input readonly="true" matInput formControlName="account">
+    </mat-form-field>
+  </div>
+
+  <div class="form--group">
+    <div class="form--label">TO ACCOUNT</div>
+    <mat-form-field floatLabel="never">
+      <input matInput formControlName="merchant" placeholder="Account">
+      <mat-error *ngIf="form.get('merchant').hasError('required')">
+        Account is <strong>required</strong>
+      </mat-error>
+    </mat-form-field>
+
+  </div>
+
+  <div class="form--group">
+    <div class="form--label">AMOUNT</div>
+    <mat-form-field floatLabel="never">
+      <input type="number" matInput formControlName="amount" placeholder="0.00">
+      <span matPrefix>$&nbsp;</span>
+      <mat-error *ngIf="form.get('amount').hasError('required')">
+        Amount is <strong>required</strong>
+      </mat-error>
+      <mat-error *ngIf="form.get('amount').hasError('balance')">
+        Feature transfer is too big
+      </mat-error>
+    </mat-form-field>
+  </div>
+  <div class="form--btn">
+    <button type="submit" [disabled]="!form.valid" mat-raised-button>SUBMIT</button>
+  </div>
+</form>

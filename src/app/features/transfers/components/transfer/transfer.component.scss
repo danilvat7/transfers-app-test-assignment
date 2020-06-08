@@ -1,0 +1,13 @@
+.transfer {
+  .card-header {
+    height: 43px;
+  }
+
+  .card-body {
+    padding: 33px 23px 32px 17px;
+  }
+
+  @media (max-width: 767px) {
+    padding-top: 20px;
+  }
+}

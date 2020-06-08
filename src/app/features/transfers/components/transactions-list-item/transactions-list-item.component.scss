@@ -1,0 +1,90 @@
+$grey: #cccccc;
+
+.transaction {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 68px;
+  border-top: 2px solid $grey;
+  border-right: 2px solid $grey;
+  padding: 0 20px 0 35px;
+  position: relative;
+
+  &--info {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  &--status {
+    height: 70px;
+    width: 10px;
+    margin-top: -2px;
+    position: absolute;
+    left: 0;
+    top: 0;
+  }
+
+  &--date {
+    font-weight: 300;
+    width: 97px;
+  }
+
+  &--merchant-logo {
+    margin-right: 39px;
+
+    img {
+      width: 43px;
+      height: 43px;
+    }
+  }
+
+  &--merchant {
+    div {
+      &:first-child {
+        font-size: 18px;
+        line-height: 20px;
+      }
+    }
+  }
+
+  &--amount {
+    font-weight: 600;
+    font-size: 20px;
+    line-height: 22px;
+  }
+
+  @media (max-width: 991px) {
+    padding: 0 10px 0 15px;
+
+    &--date {
+      width: 58px;
+    }
+  }
+
+  @media (max-width: 767px) {
+    &--merchant-logo {
+      display: none;
+    }
+
+    &--merchant {
+      div {
+        &:first-child {
+          font-size: 14px;
+        }
+
+        &:last-child {
+          display: none;
+        }
+      }
+    }
+
+    &--date {
+      font-size: 13px;
+    }
+
+    &--amount {
+      font-size: 15px;
+    }
+  }
+}

@@ -1,0 +1,29 @@
+<div class="transactions-filter">
+  <div class="transactions-filter--seach">
+    <mat-form-field class="searh-field">
+      <mat-label>Search by typing...</mat-label>
+      <input matInput (keyup)="onSearchChange($event.target.value)" #searchInput>
+      <mat-icon class="searh-field--clear-icon" *ngIf="searchInput.value"
+        (click)="searchInput.value = ''; onClearSearch()">
+        clear
+      </mat-icon>
+    </mat-form-field>
+  </div>
+  <div class="transactions-filter--sort">
+    <div>
+      Sort by
+    </div>
+    <mat-button-toggle-group class="sort-btns">
+      <mat-button-toggle class="sort-btns--btn" [value]="btn.field" *ngFor="let btn of sortBtns"
+        (click)="onSortChange(btn.field)">
+        {{btn.label}}
+        <div class="sort-btns--icons" *ngIf="btn.sort">
+          <mat-icon *ngIf="btn.sort === 1">keyboard_arrow_up</mat-icon>
+          <mat-icon *ngIf="btn.sort === -1">keyboard_arrow_down</mat-icon>
+        </div>
+      </mat-button-toggle>
+
+    </mat-button-toggle-group>
+  </div>
+
+</div>
