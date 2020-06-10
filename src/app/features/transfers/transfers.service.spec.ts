@@ -53,8 +53,10 @@ describe('Service: Transfers', () => {
   it('should set transaction and filteredSortedTransactions to the store', () => {
     service.getAllTransaction();
     const { transactions, filteredSortedTransactions } = service.storeValue;
-    expect(transactions).toEqual(transactionsMock.data);
-    expect(filteredSortedTransactions).toEqual(transactionsMock.data);
+    expect(transactions[0].merchant).toEqual(transactionsMock.data[0].merchant);
+    expect(filteredSortedTransactions[0].merchant).toEqual(
+      transactionsMock.data[0].merchant
+    );
   });
 
   it('should set new transfer to the store and call filterSortTransactions', () => {
@@ -63,7 +65,7 @@ describe('Service: Transfers', () => {
     const newTransfer: ITransfer = {
       account: '',
       merchant: 'Test merchant',
-      amount: '100',
+      amount: 100,
     };
     const { data } = transactionsMock;
     service.set('transactions', data);

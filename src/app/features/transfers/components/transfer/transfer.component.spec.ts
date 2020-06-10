@@ -25,7 +25,7 @@ const mockBalance = 1000;
 const newTransfer: ITransfer = {
   account: '',
   merchant: 'Test merchant',
-  amount: '100',
+  amount: 100,
 };
 
 describe('TransferComponent', () => {

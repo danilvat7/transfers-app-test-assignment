@@ -1,10 +1,14 @@
 import { Injectable } from '@angular/core';
 
-// Interfaces
-import { ITransaction, ITransactionsFilter } from './../../interfaces';
+// Lodash
+import { orderBy as multipleSort } from 'lodash';
 
-// Utils
-import { multipleSorting } from './../../utils';
+// Interfaces
+import {
+  ITransaction,
+  ITransactionsFilter,
+  ISortByItem,
+} from './../../interfaces';
 
 const allowedToFilterFields = ['merchant', 'amount', 'transactionType'];
 
@@ -32,9 +36,11 @@ export class TransfersFilterService {
       );
     }
     // Sort
-    filteredSortedTransactions = filteredSortedTransactions.sort(
-      multipleSorting(sortBy)
+    filteredSortedTransactions = this.sortTransactions(
+      filteredSortedTransactions,
+      sortBy
     );
+
     return filteredSortedTransactions;
   }
 
@@ -47,7 +53,7 @@ export class TransfersFilterService {
 
       for (const [key, value] of Object.entries(transaction)) {
         if (this.isAllowedToFilter(key)) {
-          if (`${value}`?.toLowerCase().indexOf(search) > -1) {
+          if (`${value}`?.toLowerCase().includes(search)) {
             isExist = true;
           }
         }
@@ -57,6 +63,17 @@ export class TransfersFilterService {
   }
 
   private isAllowedToFilter(field: string): boolean {
-    return allowedToFilterFields.indexOf(field) > -1;
+    return allowedToFilterFields.includes(field);
+  }
+
+  private sortTransactions(
+    transactions: ITransaction[],
+    sortBy: ISortByItem[]
+  ): ITransaction[] {
+    const sortFields = sortBy.map((item) => item.prop);
+    const sortDirections = sortBy.map((item) => {
+      return item.direction === 1 ? 'asc' : 'desc';
+    });
+    return multipleSort(transactions, sortFields, sortDirections);
   }
 }

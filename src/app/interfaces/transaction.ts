@@ -1,5 +1,5 @@
 export interface ITransaction {
-  amount: string;
+  amount: number;
   categoryCode: string;
   merchant: string;
   merchantLogo: string;

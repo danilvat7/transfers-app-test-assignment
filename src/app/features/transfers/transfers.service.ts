@@ -60,7 +60,13 @@ export class TransfersService {
    * Should be replaced with the real api call
    */
   getAllTransaction() {
-    const { data } = transactionsMock;
+    let { data } = transactionsMock;
+    data = data.map((item) => {
+      return {
+        ...item,
+        amount: +item.amount,
+      };
+    });
     this.set('transactions', data);
     this.set('filteredSortedTransactions', data);
   }

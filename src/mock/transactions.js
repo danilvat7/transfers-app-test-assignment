@@ -82,7 +82,7 @@ export const transactionsMock = {
       transactionType: "Card Payment",
     },
     {
-      amount: "14.95",
+      amount: "142.95",
       categoryCode: "#fbbb1b",
       merchant: "Southern Electric Company",
       merchantLogo:

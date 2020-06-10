@@ -51,8 +51,8 @@ describe('TransferFormComponent', () => {
     component.accountBalance = balance;
     component['updateBalance']();
     expect(
-      component.form.get('account').value.indexOf(`${balance}`)
-    ).toBeGreaterThan(-1);
+      component.form.get('account').value.includes(`${balance}`)
+    ).toBeTrue();
   });
 
   it('should emit event on formSubmit', () => {
